@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        var t = 0,
+            p = 0,
+            g = 0;
+
+        function check() {
+            if (t >= 2 && p >= 2 && g >= 2) {
+                document.getElementById("txt").innerHTML="You Win !!!!!!!!!"
+                
+            }
+        }
+        function play(){
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+
+        function o1() {
+            t = t + 1;
+            document.getElementById("pic1").src = "tikka.jpeg";
+            check();
+        }
+
+        function o2() {
+            p = p + 1;
+            document.getElementById("pic2").src = "parotta.jpeg";
+            check();
+        }
+
+        function o3() {
+            g = g + 1;
+            document.getElementById("pic3").src = "grill.jpeg";
+            check();
+        }
+
+        function o4() {
+            p = p + 1;
+            document.getElementById("pic4").src = "parotta.jpeg";
+            check();
+        }
+
+        function o5() {
+            g = g + 1;
+            document.getElementById("pic5").src = "grill.jpeg";
+            check();
+        }
+
+        function o6() {
+            t = t + 1;
+            document.getElementById("pic6").src = "tikka.jpeg";
+            check();
+        }
+
+        function back() {
+            if ((t == 1 && g == 1) || (t == 1 && p == 1) || (p == 1 && g == 1)) {
+                t = 0;
+                g = 0;
+                p = 0;
+                document.getElementById("pic1").src = "card.JPG";
+                document.getElementById("pic2").src = "card.JPG";
+                document.getElementById("pic3").src = "card.JPG";
+                document.getElementById("pic4").src = "card.JPG";
+                document.getElementById("pic5").src = "card.JPG";
+                document.getElementById("pic6").src = "card.JPG";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <audio id="audio" src="click.mp3"></audio>
+    <div>
+        <center>
+            <h1 id="txt">MeMoRy GaMe</h1>
+            
+        </center>
+    </div>
+    <div>
+        <center>
+            <img src="card.JPG" alt="contact adminstrator" id="pic1" onmouseover="o1()" onmouseout="back()" onmouseenter="play()">
+            <img src="card.JPG" alt="contact adminstrator" id="pic2" onmouseover="o2()" onmouseout="back()" onmouseenter="play()">
+            <img src="card.JPG" alt="contact adminstrator" id="pic3" onmouseover="o3()" onmouseout="back()" onmouseenter="play()">
+            <br>
+            <img src="card.JPG" alt="contact adminstrator" id="pic4" onmouseover="o4()" onmouseout="back()" onmouseenter="play()">
+            <img src="card.JPG" alt="contact adminstrator" id="pic5" onmouseover="o5()" onmouseout="back()" onmouseenter="play()">
+            <img src="card.JPG" alt="contact adminstrator" id="pic6" onmouseover="o6()" onmouseout="back()" onmouseenter="play()">
+        </center>
+    </div>
+</body>
+
+</html>
